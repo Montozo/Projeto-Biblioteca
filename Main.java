@@ -1,10 +1,17 @@
-import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Livro livro = new Livro("Semem","meu pau", LocalDate.now());
+        
+        Biblioteca biblioteca = new Biblioteca();
 
-        System.out.println(livro.getStatusEmprestimo());
+        //biblioteca.getLivrosList().forEach(s -> s.emprestaLivro(false));
+
+        try {
+            biblioteca.login();
+        } catch (UsuarioInvalidoException e) {
+        }
+
+        Biblioteca.getFuncoesUsuario();
 
     }
-}
+    }
